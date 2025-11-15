@@ -4,105 +4,14 @@
 
 Implement a **Mini Learning Management System (LMS)** using **any object-oriented language** you like (C++, Java, Python, C#, etc.).
 
-You’ll:
+You'll:
 
 - Write a set of related classes and interfaces.
 - Wire them together in a small **demo / `main`** program and run it.
 
-No UML file is given here; you just follow the type list and behaviour requirements.
+Here is the UML Diagram:
 
----
-
-## 2. What to Write (Classes / Interfaces)
-
-### 2.1. User & Roles
-
-Create these classes:
-
--`User`
-
--`Student` (inherits from `User`)
-
--`Instructor` (inherits from `User`)
-
-> Make them represent the idea of a generic user, a learner, and a teacher.
-
----
-
-### 2.2. Course Structure
-
-Create these classes:
-
--`Course`
-
--`Module`
-
--`Lesson`
-
-> Make `Course` contain modules, and `Module` contain lessons.
-
----
-
-### 2.3. Enrollment & Status
-
-Create:
-
--`Enrollment`
-
--`EnrollmentStatus` (enum / similar, e.g. `ACTIVE`, `COMPLETED`, `CANCELLED`)
-
-> `Enrollment` should link a `Student` to a `Course` and track completion progress.
-
----
-
-### 2.4. Notification
-
-Create:
-
-- Interface/abstract type: `INotificationChannel`
-- Implementations:
-
--`EmailNotificationChannel`
-
--`SmsNotificationChannel`
-
-> Each concrete notifier should have a method (e.g. `send(user, message)`) that **prints** to console/log to simulate a real notification.
-
----
-
-### 2.5. Repositories (In-Memory)
-
-Create interfaces:
-
--`ICourseRepository`
-
--`IEnrollmentRepository`
-
-Then create simple in-memory implementations, e.g.:
-
--`InMemoryCourseRepository`
-
--`InMemoryEnrollmentRepository`
-
-> Use lists/maps/arrays to store data in memory. No real database needed.
-
----
-
-### 2.6. Service Layer
-
-Create:
-
--`EnrollmentService`
-
-This class should:
-
-- Use the repositories.
-- Use at least one `INotificationChannel`.
-- Provide methods to:
-- Enroll a student into a course.
-- Mark a lesson as completed for an enrollment and update progress.
-
----
+![UML Design](UML_Design.png)
 
 ## 3. What to Run (Demo / Main Program)
 
